@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback App</title>
+</head>
+<body>
+    <h2>Leave a Comment</h2>
+    <form method="post">
+        Name: <input type="text" name="name" required><br><br>
+        Comment: <textarea name="comment" required></textarea><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <h3>Previous Comments</h3>
+    <ul>
+        {% for row in feedback %}
+            <li><strong>{{ row[0] }}:</strong> {{ row[1] }} <em>({{ row[2] }})</em></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
