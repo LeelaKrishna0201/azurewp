@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Feedback App</title>
-</head>
+<head><title>Feedback Form</title></head>
 <body>
-    <h2>Leave a Comment</h2>
-    <form method="post">
-        Name: <input type="text" name="name" required><br><br>
-        Comment: <textarea name="comment" required></textarea><br><br>
-        <input type="submit" value="Submit">
-    </form>
+  <h2>Feedback Form</h2>
+  <form method="post">
+    Name: <input type="text" name="name"><br><br>
+    Message: <textarea name="message"></textarea><br><br>
+    <input type="submit" value="Submit">
+  </form>
 
-    <h3>Previous Comments</h3>
-    <ul>
-        {% for row in feedback %}
-            <li><strong>{{ row[0] }}:</strong> {{ row[1] }} <em>({{ row[2] }})</em></li>
-        {% endfor %}
-    </ul>
+  <h3>Feedbacks:</h3>
+  <ul>
+    {% for f in feedbacks %}
+      <li><strong>{{ f.name }}:</strong> {{ f.message }}</li>
+    {% endfor %}
+  </ul>
 </body>
 </html>
